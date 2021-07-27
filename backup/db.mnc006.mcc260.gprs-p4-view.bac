@@ -1,0 +1,611 @@
+$TTL	600
+@			IN SOA	dns1.mnc006.mcc260.gprs.	root.mnc006.mcc260.gprs.	(
+					2021072101	; Serial
+					2H		; Refresh
+					1H		; Retry
+					30D		; Expire
+					1H )		; Minimum
+
+			IN NS		dns1.mnc006.mcc260.gprs.
+			IN NS		dns2.mnc006.mcc260.gprs.
+			IN NS		dns3.mnc006.mcc260.gprs.
+			IN NS		dns4.mnc006.mcc260.gprs.
+
+dns1			IN A		89.108.192.21
+apndns1			IN A		89.108.192.21
+dns2			IN A		89.108.192.22
+apndns2			IN A		89.108.192.22
+dns3			IN A		89.108.192.17
+dns4			IN A		89.108.192.18
+checkdns		IN A		89.108.192.0	; SGSN DNS HEALTH CHECK
+
+;############################################
+;##                                        ##
+;##      PUBLIC APNs SECTION               ##
+;##                                        ##
+;############################################
+
+;APN internet###############################
+
+;waw1-ggsn1
+internet  		IN A 	89.108.192.115
+
+;waw5-ggsn2
+internet  		IN A	89.108.192.123
+
+;poz4-ggsn8
+;internet                IN A    89.108.192.67
+
+;kat2-ggsn7
+;internet               IN A    89.108.192.91
+
+;waw5-ggsn12
+internet                IN A    89.108.192.119
+
+;kat1-ggsn15
+internet               IN A    89.108.192.71
+
+;GTP-Proxy CNAME###############################
+
+lb-gtpproxy             IN A    89.108.192.103
+lb-gtpproxy             IN A    89.108.192.6
+
+sh-gtpproxy             IN A    89.108.192.103
+sh-gtpproxy             IN A    89.108.192.6
+
+;APN mms####################################
+
+;waw5-ggsn4
+;mms 			IN A	89.108.192.27
+
+;waw5-ggsn2
+;mms    			IN A    89.108.192.123
+
+;waw1-ggsn1
+mms          		IN A    89.108.192.115
+
+;kat2-ggsn7
+;mms			IN A	89.108.192.91
+
+;poz4-ggsn8
+;mms			IN A	89.108.192.67
+
+;waw5-ggsn12
+mms			IN A    89.108.192.119
+
+;kat1-ggsn15
+mms			IN A    89.108.192.71
+
+;APN blackberrry.net#########################
+
+;waw5-ggsn4
+blackberry.net 		IN A	89.108.192.27
+
+;kat2-ggsn7
+blackberry.net 		IN A	89.108.192.91
+
+
+;APN playmetric##############################
+;waw5-ggsn4
+playmetric		IN A	89.108.192.27
+
+
+;APN rep#####################################
+;waw5-ggsn4
+rep			IN A	89.108.192.27
+
+;APN euinternet ###############################
+;
+;waw1-ggsn1
+euinternet	IN A	89.108.192.115
+;waw5-ggsn2
+euinternet	IN A	89.108.192.123
+
+;APN internetvip ##############################
+;waw5-ggsn9
+internetvip              IN A    89.108.192.43
+ipnet                    IN A    89.108.192.43
+
+;APN tr069 ##############################
+;waw1-ggsn1
+tr069              IN A    89.108.192.115
+
+
+;############################################
+;##                                        ##
+;##      PRIVATE APNs SECTION               ##
+;##                                        ##
+;############################################
+
+fleetconnect            IN CNAME      private-apn 
+fleetconnect-gtpproxy   IN CNAME      private-apn
+pomiar                  IN CNAME      private-apn
+pomiar-gtpproxy         IN CNAME      private-apn
+3s.mng                  IN CNAME      private-apn
+3s.mng-gtpproxy         IN CNAME      private-apn
+3s.pl                   IN CNAME      private-apn
+3s.pl-gtpproxy          IN CNAME      private-apn
+3s.public               IN CNAME      private-apn
+3s.public-gtpproxy      IN CNAME      private-apn
+pkpenergia.pl		IN CNAME      private-apn
+pkpenergia.pl-gtpproxy	IN CNAME      private-apn
+pkpenergiatest		IN CNAME      private-apn
+pkpenergiatest-gtpproxy	IN CNAME      private-apn
+swspzoo                 IN CNAME      private-apn
+swspzoo-gtpproxy        IN CNAME      private-apn
+pwikminsk.pl            IN CNAME      private-apn
+pwikminsk.pl-gtpproxy   IN CNAME      private-apn
+play.noma2.pl		IN CNAME      private-apn
+play.noma2.pl-gtpproxy	IN CNAME      private-apn
+innovationcode01                 IN CNAME      private-apn
+innovationcode01-gtpproxy        IN CNAME      private-apn
+fenice.pl		IN CNAME      private-apn
+fenice.pl-gtpproxy	IN CNAME      private-apn
+licznikp4		IN CNAME      private-apn
+licznikp4-gtpproxy	IN CNAME      private-apn
+kiwk.m			IN CNAME      private-apn
+kiwk.m-gtpproxy		IN CNAME      private-apn
+controltech		IN CNAME      private-apn
+controltech-gtpproxy	IN CNAME      private-apn
+vt			IN CNAME      private-apn
+vt-gtpproxy		IN CNAME      private-apn
+tlbapnplay		IN CNAME      private-apn
+tlbapnplay-gtpproxy	IN CNAME      private-apn
+mzkkk.pl		IN CNAME      private-apn
+mzkkk.pl-gtpproxy	IN CNAME      private-apn
+elektrowniapolska	IN CNAME      private-apn
+electrowniapolska-gtproxy	IN CNAME      private-apn
+zr-monitoring		IN CNAME      private-apn
+zr-monitoring-gtproxy	IN CNAME      private-apn
+
+private-apn             IN A    89.108.192.27
+
+;############################################
+;##                                        ##
+;##    TEST APNs SECTION                   ##
+;##                                        ##
+;############################################
+
+;Test APNs waw1-ggsn1########################
+;APN ggsn1internet
+ggsn1internet		IN A	89.108.192.115
+
+;APN ggsn1drivetest
+ggsn1drivetest		IN A	89.108.192.115
+
+;APN ggsn1mms
+ggsn1mms		IN A 	89.108.192.115
+
+;APN ggsn1internet6
+ggsn1internet6          IN A    89.108.192.115
+
+;APN ggsn21internet
+ggsn21internet		IN A	89.108.192.75
+
+;Test APNs waw5-ggsn2########################
+;APN ggsn2internet
+ggsn2internet		IN A 	89.108.192.123
+
+;APN ggsn2drivetest
+ggsn2drivetest		IN A	89.108.192.123
+
+;APN ggsn2mms
+ggsn2mms		IN A 	89.108.192.123
+
+;APN ggsn2internet6
+ggsn2internet6          IN A    89.108.192.123
+
+
+;Test APNs waw5-ggsn4#########################
+;APN ggsn4internet
+ggsn4internet		IN A	89.108.192.27
+
+;APN ggsn4drivetest
+ggsn4drivetest		IN A    89.108.192.27
+
+
+;APN ggsn4mms
+ggsn4mms		IN A	89.108.192.27
+
+;APN ggsn4internet6
+ggsn4internet6		IN A	89.108.192.27
+
+;APN ggsn4ims
+ggsn4ims		IN A	89.108.192.27
+
+
+;Test APNs kat2-ggsn7#########################
+;APN ggsn7internet
+ggsn7internet           IN A    89.108.192.91
+
+;APN ggsn7drivetest
+ggsn7drivetest          IN A    89.108.192.91
+
+;APN ggsn7mms
+ggsn7mms                IN A    89.108.192.91
+
+;APN ggsn7internet6
+ggsn7internet6          IN A    89.108.192.91
+
+
+;test APNs poz4-ggsn8#########################
+;APN ggsn8internet
+ggsn8internet           IN A    89.108.192.67
+
+;APN ggsn8drivetest
+ggsn8drivetest          IN A    89.108.192.67
+
+;APN ggsn8mms
+ggsn8mms                IN A    89.108.192.67
+
+;APN ggsn8internet6
+ggsn8internet6          IN A    89.108.192.67
+
+;test APNs waw5-ggsn9########################
+ggsn9internet           IN A    89.108.192.163
+
+;Test APNs waw5-ggsn12#########################
+;APN ggsn12internet
+ggsn12internet           IN A    89.108.192.119
+
+;APN ggsn12drivetest
+ggsn12drivetest          IN A    89.108.192.119
+
+;APN ggsn12mms
+ggsn12mms                IN A    89.108.192.119
+
+;APN ggsn12internet6
+ggsn12internet6          IN A    89.108.192.119
+
+;Test APNs kat1-ggsn15#########################
+;APN ggsn15internet
+ggsn15internet           IN A    89.108.192.71
+
+;APN ggsn15drivetest
+ggsn15drivetest          IN A    89.108.192.71
+
+;APN ggsn15mms
+ggsn15mms                IN A    89.108.192.71
+
+;APN ggsn15internet6
+ggsn15internet6          IN A    89.108.192.71
+
+;Test APNs waw5-ggsn23#########################
+;APN ggsn23internet
+ggsn23internet IN A 89.108.197.3
+
+;APN ggsn23mms
+ggsn23mms IN A 89.108.197.3
+
+;APN ggsn23internet6
+ggsn23internet6 IN A 89.108.197.3
+
+;Test APNs waw6-ggsn24#########################
+;APN ggsn24internet
+ggsn24internet IN A 89.108.197.4
+
+;APN ggsn24mms
+ggsn24mms IN A 89.108.197.4
+
+;APN ggsn24internet6
+ggsn24internet6 IN A 89.108.197.4
+
+
+;APN billing
+tbbilling		IN A	89.108.192.63
+
+
+;Test APNs gtp-proxy#########################
+;APN gtpproxylive
+gtpproxylive             IN A	89.108.192.103
+gtpproxylive             IN A	89.108.192.6
+
+;Test APNs waw9-ggsn_affirmed########################
+ugw1internet	IN A	89.108.192.59
+ugwinternet     IN A    89.108.192.59
+
+;Test APNs allot test poc########################
+;APN allot
+allot		IN A	89.108.192.115
+
+;VIRGIN APNs  #########################
+virgin-internet       IN A	185.135.0.4
+virgin-internet       IN A	185.135.1.5
+virgin-internet       IN A	185.135.0.6
+virgin-internet       IN A	185.135.1.7
+virgin-internet       IN A	185.135.0.8
+virgin-internet       IN A	185.135.1.9
+virgin-internet       IN A	185.135.0.10
+virgin-internet       IN A	185.135.1.11
+virgin-internet       IN A	185.135.0.12
+virgin-internet       IN A	185.135.1.13
+virgin-internet       IN A	185.135.0.14
+virgin-internet       IN A	185.135.1.15
+virgin-internet       IN A	185.135.1.4
+virgin-internet       IN A	185.135.0.5
+virgin-internet       IN A	185.135.1.6
+virgin-internet       IN A	185.135.0.7
+virgin-internet       IN A	185.135.1.8
+virgin-internet       IN A	185.135.0.9
+virgin-internet       IN A	185.135.1.10
+virgin-internet       IN A	185.135.0.11
+virgin-internet       IN A	185.135.1.12
+virgin-internet       IN A	185.135.0.13
+virgin-internet       IN A	185.135.1.14
+virgin-internet       IN A	185.135.0.15
+;virgin-internet       IN A      185.135.1.16
+virgin-mms	 IN A	185.135.0.4
+;virgin-mms	 IN A	185.135.1.5
+;virgin-mms       IN A	185.135.1.4
+virgin-mms       IN A	185.135.0.5
+
+virgin-test    IN A      185.135.0.15
+virgin-test    IN A      185.135.1.15
+
+;Virgin GTPPROXY
+;virgin1-gtpproxy        IN A    89.108.192.7
+virgin-test-gtpproxy	IN A	185.135.0.16
+virgin-test-gtpproxy	IN A	185.135.1.16
+
+;Telna APNs
+mobilenet               IN CNAME        sh-gtpproxy
+knowroaming             IN CNAME        sh-gtpproxy
+cognia                  IN CNAME        sh-gtpproxy
+data641003              IN CNAME        sh-gtpproxy
+generationone.com       IN CNAME        sh-gtpproxy
+telnamobile.com         IN CNAME        sh-gtpproxy
+openroamer.com          IN CNAME        sh-gtpproxy
+doodad                  IN CNAME        sh-gtpproxy
+halys                   IN CNAME        sh-gtpproxy
+myevo                   IN CNAME        sh-gtpproxy
+gigsky                  IN CNAME        sh-gtpproxy
+rh                      IN CNAME        sh-gtpproxy
+roamingby.me            IN CNAME        sh-gtpproxy
+teleena.com             IN CNAME        sh-gtpproxy
+hola                    IN CNAME        sh-gtpproxy
+kropen                  IN CNAME        sh-gtpproxy
+*.dataxs.mobi           IN CNAME        sh-gtpproxy
+*.teleena.com           IN CNAME        sh-gtpproxy
+soracom.io              IN CNAME        sh-gtpproxy
+travel.apn              IN CNAME        sh-gtpproxy
+neox                    IN CNAME        sh-gtpproxy
+cmlink                  IN CNAME        sh-gtpproxy
+ppcom                   IN CNAME        sh-gtpproxy
+internet.altan          IN CNAME        sh-gtpproxy
+mms.altan.com           IN CNAME        sh-gtpproxy
+mbb.mobi-data.com       IN CNAME        sh-gtpproxy
+onomondo                IN CNAME        sh-gtpproxy
+mitto                   IN CNAME        sh-gtpproxy
+globaldata              IN CNAME        sh-gtpproxy
+mobi-data.com           IN CNAME        sh-gtpproxy
+yyb			IN CNAME	sh-gtpproxy
+mbb.voiamo.net		IN CNAME	sh-gtpproxy
+a85			IN CNAME	sh-gtpproxy
+easy4			IN CNAME	sh-gtpproxy
+altanwifi		IN CNAME	sh-gtpproxy
+teal			IN CNAME	sh-gtpproxy
+*.cs101			IN CNAME	sh-gtpproxy
+KVH			IN CNAME	sh-gtpproxy
+umts			IN CNAME	sh-gtpproxy
+mega45g.com		IN CNAME	sh-gtpproxy
+internet.adm.com	IN CNAME	sh-gtpproxy
+internet.izzi.mx	IN CNAME	sh-gtpproxy
+alphaamerica		IN CNAME	sh-gtpproxy
+alphaapac		IN CNAME	sh-gtpproxy
+alphaeurope		IN CNAME	sh-gtpproxy
+gotekplus		IN CNAME	sh-gtpproxy
+internet.esmero.com	IN CNAME	sh-gtpproxy
+usa.mobi-data.com	IN CNAME	sh-gtpproxy
+asia.mobi-data.com	IN CNAME	sh-gtpproxy
+eu.mobi-data.com	IN CNAME	sh-gtpproxy
+iboots                  IN CNAME        sh-gtpproxy
+internet.altan.sintethering     IN CNAME        sh-gtpproxy
+*.excelsior             IN CNAME        sh-gtpproxy
+internet.bluetelecomm.com     IN CNAME        sh-gtpproxy
+internet.cfe.com        IN CNAME        sh-gtpproxy
+
+internet.mvne1.com      IN CNAME        sh-gtpproxy
+internet.mexfon.com     IN CNAME        sh-gtpproxy
+internet.telum.com      IN CNAME        sh-gtpproxy
+internet.yotelco.com    IN CNAME        sh-gtpproxy
+internet.newww.com      IN CNAME        sh-gtpproxy
+internet.wm.com  	IN CNAME        sh-gtpproxy
+*.cgate	                IN CNAME        sh-gtpproxy
+
+telna.test1     	IN A    199.255.4.175
+telna.test1     	IN A    199.255.4.142
+telna.test2     	IN A    199.255.4.78
+telna.test2     	IN A    199.255.4.79
+
+;Telna GTPPROXY
+telna1-gtpproxy     	IN A    199.255.4.6
+telna1-gtpproxy     	IN A    199.255.4.134
+telna2-gtpproxy     	IN A    199.255.4.133
+telna2-gtpproxy     	IN A    199.255.4.125
+telna3-gtpproxy     	IN A    199.255.4.20
+telna4-gtpproxy     	IN A    199.255.4.124
+telna4-gtpproxy     	IN A    199.255.4.130
+telna5-gtpproxy     	IN A    199.255.4.90
+telna5-gtpproxy     	IN A    199.255.4.190
+telna6-gtpproxy     	IN A    199.255.4.250
+telna6-gtpproxy     	IN A    199.255.4.251
+telna7-gtpproxy         IN A    199.255.4.178
+telna7-gtpproxy         IN A    199.255.4.11
+
+;NAKA
+chili                   IN CNAME        sh-gtpproxy
+
+;NAKA GTPPROXY
+;chili-naka-gtpproxy     IN A    89.108.192.5
+chili-naka-gtpproxy     IN A    89.108.192.6
+
+;CLX
+clx                     IN CNAME        sh-gtpproxy
+ecc                     IN CNAME        sh-gtpproxy
+acme1                   IN CNAME        sh-gtpproxy
+acme2                   IN CNAME        sh-gtpproxy
+ecc.test                IN CNAME        sh-gtpproxy
+p4proxy                 IN CNAME        sh-gtpproxy
+
+;CLX GTPPROXY
+clx1-gtpproxy           IN A    89.108.192.126
+clx2-gtpproxy           IN A    185.114.248.81
+rebtel                  IN A    89.108.192.126
+connect                 IN A    89.108.192.126
+
+;GlobeTouch APNs
+*.vzwentp               IN CNAME        sh-gtpproxy
+vzwinternet             IN CNAME        sh-gtpproxy
+vzwadmin                IN CNAME        sh-gtpproxy
+vzwapp                  IN CNAME        sh-gtpproxy
+vzwims                  IN CNAME        sh-gtpproxy
+vzenterprise            IN CNAME        sh-gtpproxy
+*.cloudsim              IN CNAME        sh-gtpproxy
+*.globetouch            IN CNAME        sh-gtpproxy
+*.foggmobile.com        IN CNAME        sh-gtpproxy
+*.cloudsim-internet     IN CNAME        sh-gtpproxy
+*.cloudsim-broadband    IN CNAME        sh-gtpproxy
+*.cs101                 IN CNAME        sh-gtpproxy
+gtcsap-gpx101           IN CNAME        sh-gtpproxy
+gtcsap-gpx102           IN CNAME        sh-gtpproxy
+gtcsap-gpx01            IN CNAME        sh-gtpproxy
+gtcsap-pgs101           IN CNAME        sh-gtpproxy
+onstarap01pp            IN CNAME        sh-gtpproxy
+onstarap02pp            IN CNAME        sh-gtpproxy
+onstarap01              IN CNAME        sh-gtpproxy
+onstarap02              IN CNAME        sh-gtpproxy
+teal                    IN CNAME        sh-gtpproxy
+
+;GlobeTouch GTPPROXY
+globetouch1-gtpproxy    IN A    185.39.54.26
+globetouch1-gtpproxy    IN A    185.39.54.27
+globetouch2-gtpproxy    IN A    192.234.88.44
+globetouch3-gtpproxy    IN A    192.234.88.106
+globetouch3-gtpproxy    IN A    192.234.88.107
+globetouch3-gtpproxy    IN A    192.234.88.42
+globetouch3-gtpproxy    IN A    192.234.88.43
+globetouch4-gtpproxy    IN A    4.15.38.105
+globetouch4-gtpproxy    IN A    4.15.38.106
+globetouch4-gtpproxy    IN A    193.240.51.81
+
+
+;Roamability APNs
+019 	                IN CNAME    sh-gtpproxy
+apn.pagseguro.uol     	IN CNAME    sh-gtpproxy
+broadcastsim.m2m      	IN CNAME    sh-gtpproxy
+data.rewicom.net        IN CNAME    sh-gtpproxy
+emov                  	IN CNAME    sh-gtpproxy
+fast                	IN CNAME    sh-gtpproxy
+fastaccess            	IN CNAME    sh-gtpproxy
+jwm	            	IN CNAME    sh-gtpproxy
+globaldata              IN CNAME    sh-gtpproxy
+handy.travel          	IN CNAME    sh-gtpproxy
+internet.orange.net.il 	IN CNAME    sh-gtpproxy
+m2mroam               	IN CNAME    sh-gtpproxy
+mb                    	IN CNAME    sh-gtpproxy
+modem.orange.net.il   	IN CNAME    sh-gtpproxy
+mvno.net              	IN CNAME    sh-gtpproxy
+netazi                	IN CNAME    sh-gtpproxy
+orangeworld           	IN CNAME    sh-gtpproxy
+portoconecta.br       	IN CNAME    sh-gtpproxy
+redtea                	IN CNAME    sh-gtpproxy
+stone.com.br          	IN CNAME    sh-gtpproxy
+tdata                 	IN CNAME    sh-gtpproxy
+uinternet             	IN CNAME    sh-gtpproxy
+uwap.orange.co.il     	IN CNAME    sh-gtpproxy
+yellow.br             	IN CNAME    sh-gtpproxy
+yoyo	                IN CNAME    sh-gtpproxy
+vepgtest                IN CNAME    sh-gtpproxy
+rbproxy                 IN CNAME    sh-gtpproxy
+lot                     IN CNAME    sh-gtpproxy
+test.rb                 IN CNAME    sh-gtpproxy
+rb.partner.dev	        IN CNAME    sh-gtpproxy
+rb.vepg.dev	        IN CNAME    sh-gtpproxy
+roamiot                 IN CNAME    sh-gtpproxy
+chili                   IN CNAME    sh-gtpproxy
+internet.v-tell.com     IN CNAME    sh-gtpproxy
+global.dentwireless     IN CNAME    sh-gtpproxy
+internet.altan          IN CNAME    sh-gtpproxy
+gtpx.rb                 IN CNAME    sh-gtpproxy
+vr-telecom              IN CNAME    sh-gtpproxy
+eapn1.net               IN CNAME    sh-gtpproxy
+
+;Roamability GTPPROXY
+roamability1-gtpproxy    IN A    104.225.210.1
+roamability1-gtpproxy    IN A    104.225.210.9
+roamability2-gtpproxy    IN A    192.118.11.161
+roamability2-gtpproxy    IN A    192.118.11.193
+roamability3-gtpproxy    IN A    82.102.191.141
+roamability4-gtpproxy    IN A    104.225.210.6
+roamability4-gtpproxy    IN A    104.225.210.14
+roamability5-gtpproxy    IN A    194.54.174.141
+roamability5-gtpproxy    IN A    194.54.174.142
+roamability5-gtpproxy    IN A    194.54.174.157
+roamability5-gtpproxy    IN A    194.54.174.158
+roamability6-gtpproxy	 IN A	 185.253.109.1
+roamability6-gtpproxy	 IN A	 185.253.109.16
+roamability6-gtpproxy	 IN A	 185.253.109.32
+roamability6-gtpproxy	 IN A	 185.253.109.48
+
+;Mundio.Roamability APNs
+mobile.barablu.com                 IN CNAME    sh-gtpproxy
+webuk.mundio.com                   IN CNAME    sh-gtpproxy
+webbe.mundio.com                   IN CNAME    sh-gtpproxy
+webfr.mundio.com                   IN CNAME    sh-gtpproxy
+
+;mobile.barablu.com		IN A 82.113.69.24	
+
+;Mundio.Roamability GTPPROXY
+mundio.roamability1-gtpproxy    IN A    82.113.69.24
+mundio.roamability2-gtpproxy    IN A    82.113.69.41
+mundio.roamability3-gtpproxy    IN A    82.113.69.19
+mundio.roamability4-gtpproxy    IN A    82.113.69.19
+
+
+;op2.Roamability APNs
+alai                 IN CNAME    sh-gtpproxy
+inet.es              IN CNAME    sh-gtpproxy
+
+;op2.Roamability GTPPROXY
+op2.roamability1-gtpproxy    IN A    185.133.201.3
+op2.roamability1-gtpproxy    IN A    185.133.201.4
+
+
+;op3.Roamability APNs
+; same as Roamability
+
+;op3.Roamability GTPPROXY
+op3.roamability1-gtpproxy    IN A    104.225.210.6
+op3.roamability1-gtpproxy    IN A    104.225.210.14
+
+
+;###################################################################
+;##                                                               ##
+;##      TESTLAB APNs SECTION                                     ##
+;##                                                               ##
+;###################################################################
+
+;APN internet IT&Billing
+testinternet                   IN A    89.108.192.63
+testinternet2                  IN A    89.108.192.63
+testinternet3                  IN A    89.108.192.63
+
+;APN internet NPSE
+
+tbinternet2                     IN A    89.108.192.63
+tbinternet3                     IN A    89.108.192.63
+tbinternet4                     IN A    89.108.192.63
+tbinternet5                     IN A    89.108.192.63
+;tbinternet6                     IN A    89.108.192.63
+tbinternet6                     IN A    89.108.192.63
+
+;APN internet radio
+tbinternetradio                 IN A    89.108.192.63
+
+;APN mms NPSE
+testbedmms                      IN A 89.108.192.63
+
+;APN internet ATM
+tbinternet                   IN A    89.108.192.63
+tblteatm                     IN A    89.108.192.63
+

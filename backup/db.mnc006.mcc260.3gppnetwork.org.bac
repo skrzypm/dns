@@ -1,0 +1,547 @@
+$TTL	600
+@			IN SOA	dns1.mnc006.mcc260.3gppnetwork.org.	root.mnc006.mcc260.3gppnetwork.org.	(
+					2021072101	; Serial
+					2H		; Refresh
+					1H		; Retry
+					30D		; Expire
+					1H )		; Minimum
+
+			IN NS		dns1.mnc006.mcc260.3gppnetwork.org.
+			IN NS		dns2.mnc006.mcc260.3gppnetwork.org.
+			IN NS		dns3.mnc006.mcc260.3gppnetwork.org.
+			IN NS		dns4.mnc006.mcc260.3gppnetwork.org.
+
+dns1			IN A		89.108.192.21
+apndns1			IN A		89.108.192.21
+dns2			IN A		89.108.192.22
+apndns2			IN A		89.108.192.22
+dns3			IN A		89.108.192.17
+dns4			IN A		89.108.192.18
+checkdns		IN A		89.108.192.0	; SGSN DNS HEALTH CHECK
+
+
+;NAPTR public
+internet.apn.epc		IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgw-public.node.epc
+mms.apn.epc			IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgw-mms.node.epc
+playmetric.apn.epc		IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgw-playmetric.node.epc
+xcap.apn.epc                    IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-xcap.node.epc
+internetvip.apn.epc             IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-internetvip.node.epc
+ipnet.apn.epc             	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-internetvip.node.epc
+tr069.apn.epc                	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-tr069.node.epc
+
+;NAPTR euinternet
+euinternet.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgw1.node.epc
+euinternet.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgw2.node.epc
+
+;NAPTR MVNO VIRGIN
+virgin-internet.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgwirvirgin.node.epc
+
+virgin-mms.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgwirvirgin.node.epc
+
+
+;NAPTR test
+ggsn1internet.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgw1.node.epc
+ggsn2internet.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgw2.node.epc
+ggsn4internet.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgw4.node.epc
+ggsn7internet.apn.epc   IN	NAPTR 	10    	10    	"S"   	"x-3gpp-pgw:x-s8-gtp:x-gp"    	""      pgw7.node.epc
+ggsn8internet.apn.epc   IN	NAPTR 	10    	10    	"S"   	"x-3gpp-pgw:x-s8-gtp:x-gp"    	""      pgw8.node.epc
+ggsn9internet.apn.epc   IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw9.node.epc
+ggsn12internet.apn.epc	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw12.node.epc
+ggsn15internet.apn.epc	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw15.node.epc
+ggsn21internet.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw21.node.epc
+ggsn23internet.apn.epc  IN 	NAPTR 	10 	10 	"S" 	"x-3gpp-pgw:x-s8-gtp:x-gp" 	"" 	pgw23.node.epc
+ggsn24internet.apn.epc  IN 	NAPTR 	10 	10 	"S" 	"x-3gpp-pgw:x-s8-gtp:x-gp" 	"" 	pgw24.node.epc
+
+ggsn1mms.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgw1.node.epc
+ggsn2mms.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgw2.node.epc
+ggsn4mms.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgw4.node.epc
+ggsn7mms.apn.epc        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw7.node.epc
+ggsn8mms.apn.epc        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw8.node.epc
+ggsn12mms.apn.epc	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw12.node.epc
+ggsn15mms.apn.epc	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw15.node.epc
+ggsn23mms.apn.epc 	IN 	NAPTR 	10 	10 	"S" 	"x-3gpp-pgw:x-s8-gtp:x-gp" 	"" 	pgw23.node.epc
+ggsn24mms.apn.epc 	IN 	NAPTR 	10 	10 	"S" 	"x-3gpp-pgw:x-s8-gtp:x-gp" 	"" 	pgw24.node.epc
+
+ggsn1internet6.apn.epc        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw1.node.epc
+ggsn2internet6.apn.epc        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw2.node.epc
+ggsn4internet6.apn.epc        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw4.node.epc
+ggsn7internet6.apn.epc        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw7.node.epc
+ggsn8internet6.apn.epc        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw8.node.epc
+ggsn9internet6.apn.epc        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw9.node.epc
+ggsn12internet6.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw12.node.epc
+ggsn15internet6.apn.epc	      IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw15.node.epc
+ggsn23internet6.apn.epc       IN      NAPTR 	10 	10 	"S" 	"x-3gpp-pgw:x-s8-gtp:x-gp" 	"" 	pgw23.node.epc
+ggsn24internet6.apn.epc       IN      NAPTR 	10 	10 	"S" 	"x-3gpp-pgw:x-s8-gtp:x-gp" 	"" 	pgw24.node.epc
+
+opengw.apn.epc		      IN      NAPTR 	10 	10 	"S" 	"x-3gpp-pgw:x-s8-gtp:x-gp" 	"" 	opengw.node.epc
+
+;NAPTR test gtpproxylive
+gtpproxylive.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	waw5gtpproxy1.node.epc
+gtpproxylive.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	waw1gtpproxy2.node.epc
+
+;NAPTR testbed
+tbinternet2.apn.epc     IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"     ""       waw9ggsn2.node.epc
+tbinternet.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	testbed.node.epc
+;tbinternet6.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"      ""      testbed.node.epc
+ugwinternet.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"      ""      testbedaff.node.epc
+ugw1internet.apn.epc	IN 	NAPTR 	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"      ""      testbedaff.node.epc
+tbinternet6.apn.epc     IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      waw9ggsn2.node.epc
+tbbilling.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      testbed.node.epc
+
+;NAPTR MVNO Naka
+chili.apn.epc  			IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc 
+
+;NAPTR MVNO NAKA GTPPROXY
+chili-naka-gtpproxy.apn.epc   	IN 	NAPTR	10 	10 	"S" 	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgwnaka.node.epc
+
+;NAPTR allot test poc
+allot.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgw1.node.epc
+
+;SRV public - APN internet
+;pgw-public.node.epc	IN	SRV	10	50	2123	topon.pgw-s8.waw1ggsn1.piekna.node.epc			; BYPASSGTPPROXYPATTERN
+;pgw-public.node.epc	IN	SRV	10	50	2123	topon.pgw-s8.waw5ggsn2.konstruktorska.node.epc		; BYPASSGTPPROXYPATTERN
+;pgw-public.node.epc	IN	SRV	10	50	2123	topon.pgw-s8.kat2ggsn7.gospodarcza.node.epc		; BYPASSGTPPROXYPATTERN
+;pgw-public.node.epc	IN	SRV	10	50	2123	topon.pgw-s8.poz4ggsn8.komorniki.node.epc		; BYPASSGTPPROXYPATTERN
+;pgw-public.node.epc     IN      SRV     10      50      2123    topon.pgw-s8.waw5ggsn12.konstruktorska.node.epc	; BYPASSGTPPROXYPATTERN
+;pgw-public.node.epc     IN      SRV     10      50      2123    topon.pgw-s8.kat1ggsn15.jaworzno.node.epc		; BYPASSGTPPROXYPATTERN
+pgw-public.node.epc    IN      SRV     10      50      2123    topon.waw5gtpproxy1.node.epc                            ; WAW5GTPPROXY1PATTERN
+pgw-public.node.epc    IN      SRV     10      50      2123    topon.waw1gtpproxy2.node.epc                             ; WAW1GTPPROXY2PATTERN
+
+
+;SRV public -  APN mms
+pgw-mms.node.epc     IN      SRV     10      50      2123    topon.pgw-s8.waw1ggsn1.piekna.node.epc
+pgw-mms.node.epc     IN      SRV     10      50      2123    topon.pgw-s8.waw5ggsn2.konstruktorska.node.epc 
+;pgw-mms.node.epc     IN      SRV     10      50      2123    topon.pgw-s8.waw5ggsn4.konstruktorska.node.epc
+;pgw-mms.node.epc     IN      SRV     10      50      2123    topon.pgw-s8.kat2ggsn7.gospodarcza.node.epc
+pgw-mms.node.epc     IN      SRV     10      50      2123    topon.pgw-s8.poz4ggsn8.komorniki.node.epc
+pgw-mms.node.epc     IN      SRV     10      50      2123    topon.pgw-s8.waw5ggsn12.konstruktorska.node.epc
+pgw-mms.node.epc     IN      SRV     10      50      2123    topon.pgw-s8.kat1ggsn15.jaworzno.node.epc
+
+;SRV public - APN playmetric
+;pgw-playmetric.node.epc     IN      SRV     10      50      2123    topon.pgw-s8.waw5ggsn4.konstruktorska.node.epc
+pgw-playmetric.node.epc    IN      SRV     10      50      2123    topon.waw5gtpproxy1.node.epc
+pgw-playmetric.node.epc    IN      SRV     10      50      2123    topon.waw1gtpproxy2.node.epc
+
+;SRV public -  APN xcap
+pgw-xcap.node.epc 	IN 	SRV 	10 	50 	2123 	topon.pgw-s8.waw1ggsn1.piekna.node.epc
+pgw-xcap.node.epc 	IN 	SRV 	10 	50 	2123 	topon.pgw-s8.waw5ggsn2.konstruktorska.node.epc
+
+;SRV MVNO GTP Proxy
+lb-gtpproxy.node.epc		IN	SRV	10	100	2123	topon.waw5gtpproxy1.node.epc
+lb-gtpproxy.node.epc		IN	SRV	10	100	2123	topon.waw1gtpproxy2.node.epc
+
+sh-gtpproxy.node.epc	IN	    SRV	    10	    100	    2123	topon.waw5gtpproxy1.node.epc
+sh-gtpproxy.node.epc	IN	    SRV	    10	    100	    2123	topon.waw1gtpproxy2.node.epc
+
+;SRV test GTP Proxy          
+waw5gtpproxy1.node.epc		IN	SRV	10	100	2123	topon.waw5gtpproxy1.node.epc
+waw1gtpproxy2.node.epc		IN	SRV	10	100	2123	topon.waw1gtpproxy2.node.epc
+
+;SRV public -  APN internetvip
+pgw-internetvip.node.epc     	IN      SRV     10      50      2123    topon.pgw-s8.ggsn22.node.epc
+
+;SRV public -  APN tr069 
+pgw-tr069.node.epc     	IN      SRV     10      50      2123   topon.pgw-s8.waw1ggsn1.piekna.node.epc 
+
+;SRV MVNO VIRGIN 
+pgwirvirgin.node.epc            IN      SRV     10      100     2123    topon.pgw.waw5ggsnir.konstruktorska.node.epc
+
+;SRV test
+pgw1.node.epc		IN	SRV	10	100	2123	topon.pgw-s8.waw1ggsn1.piekna.node.epc
+pgw2.node.epc		IN	SRV	10	100	2123	topon.pgw-s8.waw5ggsn2.konstruktorska.node.epc
+pgw4.node.epc		IN	SRV	10	100	2123	topon.pgw-s8.waw5ggsn4.konstruktorska.node.epc
+pgw7.node.epc     	IN    	SRV   	10    	100    	2123  	topon.pgw-s8.kat2ggsn7.gospodarcza.node.epc
+pgw8.node.epc   	IN    	SRV   	10    	100    	2123  	topon.pgw-s8.poz4ggsn8.komorniki.node.epc
+pgw9.node.epc           IN      SRV     10      100     2123    topon.pgw-s8.waw5ggsn9.konstruktorska.node.epc
+pgw12.node.epc  	IN      SRV     10      100     2123    topon.pgw-s8.waw5ggsn12.konstruktorska.node.epc
+pgw15.node.epc 		IN      SRV     10      100     2123    topon.pgw-s8.kat1ggsn15.jaworzno.node.epc
+pgw21.node.epc		IN	SRV	10	100	2123	topon.pgw-s8.waw5ggsn21.konstruktorska.node.epc
+pgw23.node.epc 		IN 	SRV 	10 	100 	2123 	topon.pgw-s8.waw5ggsn23.konstruktorska.node.epc
+pgw24.node.epc 		IN 	SRV 	10 	100 	2123 	topon.pgw-s8.waw6ggsn24.annopol.node.epc
+
+opengw.node.epc		IN 	SRV 	10 	100 	2123 	topon.pgw-s8.waw5opengw1.konstruktorska.node.epc
+
+;SRV testbed
+testbed.node.epc	IN	SRV	10	50	2123	topon.pgw-s8.waw9ggsn.tasmowa.node.epc
+testbedaff.node.epc 	IN 	SRV 	10 	50 	2123 	topon.pgw-s8.waw9ggsn.affirmed.node.epc
+;w9ggsn2.node.epc        IN      SRV     10      50      2123    topon.pgw-s8.waw9ggsn2.tasmowa.node.epc
+waw9ggsn2.node.epc        IN      SRV     10      50      2123    topon.pgw-s8.waw9ggsn2.tasmowa.node.epc
+
+;SRV MVNO Naka
+pgwnaka.node.epc	IN	SRV	10	100	2123	topon.pgw1-naka.node.epc
+
+;A records public
+topon.pgw-s8.waw1ggsn1.piekna.node.epc			IN	A	89.108.192.115
+topon.pgw-s8.waw5ggsn2.konstruktorska.node.epc		IN	A	89.108.192.123
+topon.pgw-s8.waw5ggsn4.konstruktorska.node.epc          IN      A       89.108.192.27
+topon.pgw-s8.kat2ggsn7.gospodarcza.node.epc           	IN     	A      	89.108.192.91
+topon.pgw-s8.poz4ggsn8.komorniki.node.epc             	IN     	A      	89.108.192.67
+topon.pgw-s8.waw5ggsn9.konstruktorska.node.epc          IN      A       89.108.192.163
+topon.pgw-s8.waw5ggsn12.konstruktorska.node.epc 	IN      A       89.108.192.119
+topon.pgw-s8.kat1ggsn15.jaworzno.node.epc	        IN      A       89.108.192.71
+topon.pgw-s8.waw5ggsn21.konstruktorska.node.epc		IN	A	89.108.192.75
+topon.pgw-s8.ggsn22.node.epc                  		IN      A       89.108.192.43
+topon.pgw-s8.waw5ggsn23.konstruktorska.node.epc 	IN 	A 	89.108.197.3
+topon.pgw-s8.waw6ggsn24.annopol.node.epc 		IN 	A 	89.108.197.4
+topon.pgw-s8.waw5opengw1.konstruktorska.node.epc	IN	A	89.108.192.73
+
+;A records GTP Proxy
+topon.waw5gtpproxy1.node.epc		IN      A       89.108.192.103
+topon.waw1gtpproxy2.node.epc		IN      A       89.108.192.6
+
+;A records MVNO VIRGIN
+topon.pgw.waw5ggsnir.konstruktorska.node.epc			IN	A	89.108.192.7
+
+;A records testbed
+topon.pgw-s8.waw9ggsn.tasmowa.node.epc				IN	A	89.108.192.63
+topon.pgw-s8.waw9ggsn2.tasmowa.node.epc				IN	A	89.108.192.63
+topon.pgw-s8.waw9ggsn.affirmed.node.epc				IN	A	89.108.192.59
+tonon.pgw-s8.waw9ggsn2.tasmowa.node.epc                         IN      A       89.108.192.63
+
+
+;A records MVNO Naka
+topon.pgw1-naka.node.epc		IN	A	89.108.192.5
+
+;CLX APNs   #######
+
+;NAPTR MVNO CLX                
+ecc.apn.epc		        IN	NAPTR	10	10	"S"     "x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+ecc.test.apn.epc	    	IN	NAPTR	10	10	"S"     "x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+p4proxy.apn.epc		    	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+acme1.apn.epc           	IN	NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+acme2.apn.epc           	IN	NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+
+;NAPTR MVNO CLX GTPPROXY
+clx1-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw1-clx.node.epc
+clx2-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw2-clx.node.epc
+connect.apn.epc		    	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgw1-clx.node.epc
+rebtel.apn.epc		    	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	pgw1-clx.node.epc
+
+;SRV MVNO CLX            
+pgw1-clx.node.epc	    IN	    SRV	    10	    100	    2123	topon.pgw1-clx.node.epc
+pgw2-clx.node.epc	    IN	    SRV	    10	    100	    2123	topon.pgw2-clx.node.epc
+
+;A records MVNO CLX            
+topon.pgw1-clx.node.epc			IN	A	89.108.192.126
+topon.pgw2-clx.node.epc			IN	A	185.114.248.81
+
+
+;Telna APNs   #######
+
+;NAPTR Telna
+mobilenet.apn.epc     IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+knowroaming.apn.epc	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+mbb.mobi-data.com.apn.epc   IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+rh.apn.epc		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+soracom.io.apn.epc	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+doodad.apn.epc		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+cmlink.apn.epc		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+ppcom.apn.epc           IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.altan.apn.epc  IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+mms.altan.com.apn.epc   IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+onomondo.apn.epc        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+mitto.apn.epc           IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+globaldata.apn.epc      IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+mobi-data.com.apn.epc   IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+yyb.apn.epc             IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+mbb.voiamo.net.apn.epc  IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+a85.apn.epc             IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+easy4.apn.epc           IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+altanwifi.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+teal.apn.epc	        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+*.cs101.apn.epc         IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+KVH.apn.epc             IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+umts.apn.epc            IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+mega45g.com.apn.epc     IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.adm.com.apn.epc   IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.izzi.mx.apn.epc    IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+alphaamerica.apn.epc    IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+alphaapac.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+alphaeurope.apn.epc     IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+gotekplus.apn.epc     IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.esmero.com.apn.epc     IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+usa.mobi-data.com.apn.epc         IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+asia.mobi-data.com.apn.epc   	  IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+eu.mobi-data.com.apn.epc   	  IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+iboots.apn.epc	        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.altan.sintethering.apn.epc	        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+*.excelsior.apn.epc     IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.bluetelecomm.com.apn.epc        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.cfe.com.apn.epc        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+
+internet.mvne1.com.apn.epc	        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.mexfon.com.apn.epc	        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.telum.com.apn.epc	        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.yotelco.com.apn.epc	        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.newww.com.apn.epc	        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.wm.com.apn.epc	        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+
+telna.test1.apn.epc            IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgwx-telna.node.epc
+telna.test2.apn.epc            IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgwy-telna.node.epc
+
+*.cgate.apn.epc     IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+
+;NAPTR MVNO Telna GTPPROXY
+telna1-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw1-telna.node.epc
+telna2-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw2-telna.node.epc
+telna3-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw3-telna.node.epc
+telna4-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw4-telna.node.epc
+telna5-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw5-telna.node.epc
+telna6-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw6-telna.node.epc
+telna7-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw7-telna.node.epc
+
+;SRV Telna
+pgw1-telna.node.epc	    	IN	SRV	10	100	2123	topon.pgw1-telna.node.epc
+pgw2-telna.node.epc	    	IN	SRV	10	100	2123	topon.pgw2-telna.node.epc
+pgw3-telna.node.epc	    	IN	SRV	10	100	2123	topon.pgw3-telna.node.epc
+pgw4-telna.node.epc	    	IN	SRV	10	100	2123	topon.pgw4-telna.node.epc
+pgw5-telna.node.epc	    	IN	SRV	10	100	2123	topon.pgw5-telna.node.epc
+pgw6-telna.node.epc	    	IN	SRV	10	100	2123	topon.pgw6-telna.node.epc
+pgw7-telna.node.epc	    	IN	SRV	10	100	2123	topon.pgw7-telna.node.epc
+pgwx-telna.node.epc	    	IN	SRV	10	100	2123	topon.pgwx-telna.node.epc
+pgwy-telna.node.epc	    	IN	SRV	10	100	2123	topon.pgwy-telna.node.epc
+
+;A records Telna
+topon.pgw1-telna.node.epc	IN	A	199.255.4.6
+topon.pgw1-telna.node.epc	IN	A	199.255.4.134
+topon.pgw2-telna.node.epc	IN	A	199.255.4.133
+topon.pgw2-telna.node.epc	IN	A	199.255.4.125
+topon.pgw3-telna.node.epc	IN	A	199.255.4.20
+topon.pgw4-telna.node.epc	IN	A	199.255.4.124
+topon.pgw4-telna.node.epc	IN	A	199.255.4.130
+topon.pgw5-telna.node.epc	IN	A	199.255.4.90
+topon.pgw5-telna.node.epc	IN	A	199.255.4.190
+topon.pgw6-telna.node.epc       IN      A       199.255.4.250
+topon.pgw6-telna.node.epc       IN      A       199.255.4.251
+topon.pgw7-telna.node.epc	IN	A	199.255.4.178
+topon.pgw7-telna.node.epc	IN	A	199.255.4.11
+topon.pgwx-telna.node.epc       IN      A       199.255.4.175
+topon.pgwx-telna.node.epc       IN      A       199.255.4.142
+topon.pgwy-telna.node.epc       IN      A       199.255.4.78
+topon.pgwy-telna.node.epc       IN      A       199.255.4.79
+
+;GlobeTouch APNs   #######
+
+;NAPTR MVNO GlobeTouch
+*.foggmobile.com.apn.epc 	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+*.globetouch.apn.epc		IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+*.cloudsim.apn.epc		IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+*.cloudsim-internet.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+*.cloudsim-broadband.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+*.cs101.apn.epc			IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+*.vzwentp.apn.epc		IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+vzwinternet.apn.epc		IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+vzwadmin.apn.epc		IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+vzwapp.apn.epc			IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+vzwims.apn.epc			IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+vzenterprise.apn.epc		IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+onstarap01pp.apn.epc		IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+onstarap02pp.apn.epc		IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+onstarap01.apn.epc		IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+onstarap02.apn.epc		IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+teal.apn.epc			IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+
+;NAPTR MVNO GlobeTouch GTPPROXY
+globetouch1-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw1-globetouch.node.epc
+
+;SRV GlobeTouch
+pgw1-globetouch.node.epc	    	IN	SRV	10	100	2123	topon.pgw1-globetouch.node.epc
+
+;A records GlobeTouch
+topon.pgw1-globetouch.node.epc	IN	A	185.39.54.26
+topon.pgw1-globetouch.node.epc	IN	A	185.39.54.27
+
+
+;Roamability APNs   #######
+
+;NAPTR MVNO  Roamability 
+019.apn.epc                     IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+apn.pagseguro.uol.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+broadcastsim.m2m.apn.epc        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+data.rewicom.net.apn.epc        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+emov.apn.epc                    IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+fast.apn.epc                    IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+fastaccess.apn.epc              IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+jwm.apn.epc	                IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+handy.travel.apn.epc            IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.orange.net.il.apn.epc  IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+m2mroam.apn.epc                 IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+mb.apn.epc                      IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+modem.orange.net.il.apn.epc     IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+mvno.net.apn.epc                IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+netazi.apn.epc                  IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+orangeworld.apn.epc             IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+portoconecta.br.apn.epc         IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+redtea.apn.epc                  IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+stone.com.br.apn.epc            IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+tdata.apn.epc                   IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+uinternet.apn.epc               IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+uwap.orange.co.il.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+yellow.br.apn.epc               IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+yoyo.apn.epc                    IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+vepgtest.apn.epc                IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+rbproxy.apn.epc                 IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+lot.apn.epc                     IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+test.rb.apn.epc                 IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+rb.vepg.dev.apn.epc	        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+rb.partner.dev.apn.epc	        IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+mobileye8.apn.epc               IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+chili.apn.epc                   IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.v-tell.com.apn.epc     IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+global.dentwireless.apn.epc     IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+internet.altan.apn.epc		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+gtpx.rb.apn.epc                 IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+vr-telecom.apn.epc              IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+eapn1.net.apn.epc               IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+
+;NAPTR MVNO  Roamability GTPPROXY
+roamability1-gtpproxy.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw1-roamability.node.epc
+roamability2-gtpproxy.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw2-roamability.node.epc
+roamability3-gtpproxy.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw3-roamability.node.epc
+roamability4-gtpproxy.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw4-roamability.node.epc
+roamability5-gtpproxy.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw5-roamability.node.epc
+roamability6-gtpproxy.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw6-roamability.node.epc
+
+;SRV MVNO Roamability
+pgw1-roamability.node.epc	IN	SRV     10	100	2123	topon.pgw1-roamability.node.epc
+pgw2-roamability.node.epc	IN 	SRV 	10 	100 	2123 	topon.pgw2-roamability.node.epc
+pgw3-roamability.node.epc	IN 	SRV 	10 	100 	2123 	topon.pgw3-roamability.node.epc
+pgw4-roamability.node.epc	IN 	SRV 	10 	100 	2123 	topon.pgw4-roamability.node.epc
+pgw5-roamability.node.epc	IN 	SRV 	10 	100 	2123 	topon.pgw5-roamability.node.epc
+pgw6-roamability.node.epc	IN 	SRV 	10 	100 	2123 	topon.pgw6-roamability.node.epc
+
+;A records MVNO Roamability
+topon.pgw1-roamability.node.epc IN A 104.225.210.1
+topon.pgw1-roamability.node.epc IN A 104.225.210.9
+topon.pgw2-roamability.node.epc IN A 82.102.191.141
+topon.pgw2-roamability.node.epc IN A 192.118.11.161
+topon.pgw3-roamability.node.epc IN A 192.118.11.193
+topon.pgw4-roamability.node.epc IN A 104.225.210.6
+topon.pgw4-roamability.node.epc IN A 104.225.210.14
+topon.pgw5-roamability.node.epc IN A 194.54.174.141
+topon.pgw5-roamability.node.epc IN A 194.54.174.142
+topon.pgw5-roamability.node.epc IN A 194.54.174.157
+topon.pgw5-roamability.node.epc IN A 194.54.174.158
+topon.pgw6-roamability.node.epc IN A 185.253.109.1
+topon.pgw6-roamability.node.epc IN A 185.253.109.16
+topon.pgw6-roamability.node.epc IN A 185.253.109.32
+topon.pgw6-roamability.node.epc IN A 185.253.109.48
+
+;Mundio.Roamability APNs   #######
+mobile.barablu.com.apn.epc               IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+webbe.mundio.com.apn.epc                 IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+webfr.mundio.com.apn.epc                 IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+
+;NAPTR MVNO Mundio.Roamability GTPPROXY
+mundio.roamability1-gtpproxy.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw1-mundio.roamability.node.epc
+mundio.roamability3-gtpproxy.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw3-mundio.roamability.node.epc
+mundio.roamability4-gtpproxy.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw4-mundio.roamability.node.epc
+
+;SRV MVNO Mundio.Roamability
+pgw1-mundio.roamability.node.epc	IN	SRV	10	100	2123	topon.pgw1-mundio.roamability.node.epc
+pgw3-mundio.roamability.node.epc	IN 	SRV 	10 	100 	2123 	topon.pgw3-mundio.roamability.node.epc
+pgw4-mundio.roamability.node.epc	IN 	SRV 	10 	100 	2123 	topon.pgw4-mundio.roamability.node.epc
+
+;A records MVNO Mundio.Roamability
+topon.pgw1-mundio.roamability.node.epc IN A 82.113.79.12
+topon.pgw3-mundio.roamability.node.epc IN A 82.113.77.10
+topon.pgw4-mundio.roamability.node.epc IN A 82.113.79.4
+
+
+;op2.Roamability APNs   #######
+alai.apn.epc               IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+inet.es.apn.epc            IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+
+;NAPTR MVNO op2.Roamability GTPPROXY
+op2.roamability1-gtpproxy.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw1-op2.roamability.node.epc
+
+;SRV MVNO op2.Roamability
+pgw1-op2.roamability.node.epc	IN	SRV	    10	100	    2123	topon.pgw1-op2.roamability.node.epc
+
+;A records MVNO op2.Roamability
+topon.pgw1-op2.roamability.node.epc	IN	A	185.133.201.3
+topon.pgw1-op2.roamability.node.epc	IN	A	185.133.201.4
+
+
+
+;op3.Roamability APNs   #######
+; same as Roamability
+
+;NAPTR MVNO op3.Roamability GTPPROXY
+op3.roamability1-gtpproxy.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw1-op3.roamability.node.epc
+
+;SRV MVNO op3.Roamability
+pgw1-op3.roamability.node.epc	IN	SRV	    10	100	    2123	topon.pgw1-op3.roamability.node.epc
+
+;A records MVNO op3.Roamability
+topon.pgw1-op3.roamability.node.epc	IN	A	104.225.210.6
+topon.pgw1-op3.roamability.node.epc	IN	A	104.225.210.14
+
+
+;Virgin APNs   #######
+
+;NAPTR MVNO Virgin
+virgin-test.apn.epc	IN	NAPTR	10	10	"S"	"x-3gpp-pgw:x-s8-gtp:x-gp"	""	sh-gtpproxy.node.epc
+
+;NAPTR MVNO Virgin GTPPROXY
+virgin-test-gtpproxy.apn.epc       IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      virgintest.node.epc
+
+;SRV Virgin
+virgintest.node.epc            IN      SRV     10      100     2123    topon.pgw-s8.virgintest.node.epc
+
+;A records Virgin
+topon.pgw-s8.virgintest.node.epc    IN      A       185.135.0.16
+topon.pgw-s8.virgintest.node.epc    IN      A       185.135.1.16
+
+
+;############################################
+;##                                        ##
+;##      PRIVATE APNs SECTION              ##
+;##                                        ##
+;############################################
+
+;NAPTR private APN
+fleetconnect.apn.epc            IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+fleetconnect-gtpproxy.apn.epc   IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+pomiar.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+pomiar-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+3s.mng.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+3s.mng-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+3s.pl.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+3s.pl-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+3s.public.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+3s.public-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+pkpenergia.pl.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+pkpenergia.pl-gtpproxy.apn.epc 	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+pkpenergiatest.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+pkpenergiatest-gtpproxy.apn.epc IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+swspzoo.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+swspzoo-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+pwikminsk.pl.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+pwikminsk.pl-gtpproxy.apn.epc  	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+play.noma2.pl.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+play.noma2.pl-gtpproxy.apn.epc 	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+innovationcode01.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+innovationcode01-gtpproxy.apn.epc   	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+fenice.pl.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+fenice.pl-gtpproxy.apn.epc 	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+licznikp4.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+licznikp4-gtpproxy.apn.epc 	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+kiwk.m.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+kiwk.m-gtpproxy.apn.epc 	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+controltech.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+controltech-gtpproxy.apn.epc 	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+vt.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+vt-gtpproxy.apn.epc 	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+tlbapnplay.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+tlbapnplay.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+mzkkk.pl.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+mzkkk.pl-gtpproxy.apn.epc 	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+elektrowniapolska.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+elektrowniapolska-gtpproxy.apn.epc 	IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+zr-monitoring.apn.epc   		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      sh-gtpproxy.node.epc
+zr-monitoring-gtpproxy.apn.epc 		IN      NAPTR   10      10      "S"     "x-3gpp-pgw:x-s8-gtp:x-gp"      ""      pgw-private.node.epc
+
+;SRV private APN
+pgw-private.node.epc		IN	SRV	10	100	2123	topon.pgw-s8.waw5ggsn4.konstruktorska.node.epc
+

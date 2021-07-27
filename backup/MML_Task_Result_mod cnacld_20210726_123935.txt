@@ -1,0 +1,19 @@
+Script Task : mod cnacld
+==========Summary==========
+Succeeded Number : 2450
+Failed Number : 1
+===========================
+
+==========Failed MML Command==========
+MML Command-----MOD CNACLD:P=9,PFX=K'327901,ADDR=ALL,RSNAME="AMS_POI",SDESCRIPTION="AMS";
+NE : WAW_MSC4
+Report : +++    MSOFTX/*MEID:5 MENAME:WAW_MSC4*/        2021-07-26 12:41:36+02:00 DST
+O&M    #1381707
+%%/*1879426145 MEID=005 MML Session=1627295996*/MOD CNACLD: P=9,PFX=K'327901,ADDR=ALL,RSNAME="AMS_POI",SDESCRIPTION="AMS";%%
+RETCODE = 286078  The modified data record does not exist
+
+---    END
+
+
+======================================
+

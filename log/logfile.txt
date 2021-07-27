@@ -1,0 +1,14 @@
+SKRZYPM4-L 2021-07-26 14:56:06.782850
+db.mnc006.mcc260.gprs
+					2021072103	; Serial
+
+;ggsn1drivetest		IN A	89.108.192.115
+
+;ggsn7internet6          IN A    89.108.192.91
+
+SKRZYPM4-L 2021-07-26 14:56:06.782850
+db.mnc006.mcc260.gprs-p4-view
+SKRZYPM4-L 2021-07-26 14:56:06.782850
+db.mnc006.mcc260.3gppnetwork.org
+SKRZYPM4-L 2021-07-26 14:56:06.782850
+db.mnc006.mcc260.3gppnetwork.org-p4-view
