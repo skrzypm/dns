@@ -11,38 +11,43 @@ from datetime import datetime
 hostname = socket.gethostname()
 now = datetime.now()
 
-
 files = ['db.mnc006.mcc260.gprs','db.mnc006.mcc260.gprs-p4-view','db.mnc006.mcc260.3gppnetwork.org','db.mnc006.mcc260.3gppnetwork.org-p4-view']
 
+log = open('C:\GIT_Core\dns\log\logfile.txt', 'a+')
+log.write(hostname+' '+str(now)+'\n')
+
+
 for i in files:
-    orginal = r'C:\GIT_Core\dns\working'+"\\"+ i +".txt"
-    backup = r'C:\GIT_Core\dns\backup'+ "\\" +i +".bac"
-    # shutil.copyfile(orginal,backup)
-    print(orginal)
-    print(backup)
-    log = open('C:\GIT_Core\dns\log\logfile.txt', 'a+')
-    log.write(hostname+' '+str(now)+'\n')
-    log.write((i+'\n'))
+    orginal = r'C:\GIT_Core\dns\working' + "\\" + i + ".txt"
+    backup = r'C:\GIT_Core\dns\backup' + "\\" + i + ".bac"
+    log.write(30*"#"+" " + i + 30*"#"+" "+'\n')
     with open(orginal, 'r') as file1:
+        file1 = file1.readlines()
+        file1 = set(file1[8:])
         with open(backup, 'r') as file2:
-            same = set(file1).difference(file2)
-            diff = set(file2).difference(file1)
-
-
+            file2 = file2.readlines()
+            file2 = set(file2[8:])
+            same = set(file1).difference(set(file2))
+            diffr = set(file2).difference(set(file1))
 
     same.discard('\n')
-    diff.discard("\n")
-    if ( same == set()):
-        pass
-    else:
+    diffr.discard("\n")
+
+    if ( same != set()):
+        log.write(30 * "*" + "Zostaly dodane nowe wpisy" + 30 * "*" + "\n")
         for x in sorted(same):
             log.write(str(x)+'\n')
-            for y in sorted((diff)):
-                log.write((str(y)+'\n'))
+    else:
+        log.write(30 * " " + "Brak modyfikacji" + 30 * " " + "\n")
 
-    # with open('C:\GIT_Core\dns\log\logfile.txt', 'w') as file_out:
-    #     for line in same:
-    #         file_out.write(line)
+    if ( diffr != set()):
+        log.write(30 * "*" + "Zostaly usuniete wpisy" + 30 * "*" + "\n")
+        for y in sorted((diffr)):
+            log.write((str(y)+'\n'))
 
-# log = open('C:\GIT_Core\dns\log\logfile.txt','w')
+    shutil.copyfile(orginal, backup)
+
+log.write((3*"\n"))
+
+
 
