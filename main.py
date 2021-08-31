@@ -4,11 +4,12 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 import shutil
-import os
+import getpass
 import socket
 from datetime import datetime
 
-hostname = socket.gethostname()
+# hostname = socket.gethostname()
+username = getpass.getuser()
 now = datetime.now()
 date = (str(now).replace(" ","_")).replace(":","")[:17]
 # data1 = str(date)[:17]
@@ -16,7 +17,7 @@ date = (str(now).replace(" ","_")).replace(":","")[:17]
 files = ['db.mnc006.mcc260.gprs','db.mnc006.mcc260.gprs-p4-view','db.mnc006.mcc260.3gppnetwork.org','db.mnc006.mcc260.3gppnetwork.org-p4-view']
 
 log = open('C:\GIT_Core\dns\log\logfile_'+(date)+'.log', 'w')
-log.write(hostname+' '+str(now)+'\n')
+log.write(username+' '+str(now)+'\n')
 
 
 for i in files:
